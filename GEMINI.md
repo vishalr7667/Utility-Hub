@@ -4,7 +4,6 @@ Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, us
 
 1. Think Before Coding
 Don't assume, don't hide confusion, and surface tradeoffs.
-
 Before implementing, state your assumptions explicitly.
 
 If uncertain, ask.
