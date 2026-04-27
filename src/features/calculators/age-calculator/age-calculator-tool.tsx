@@ -35,7 +35,7 @@ export default function AgeCalculatorTool() {
     <div className="max-w-md mx-auto">
       <div className="space-y-6">
         <div>
-          <label htmlFor="birthdate" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="birthdate" className="block text-sm font-semibold text-[var(--color-text-secondary)] mb-2">
             Date of Birth
           </label>
           <input
@@ -43,35 +43,35 @@ export default function AgeCalculatorTool() {
             id="birthdate"
             value={birthDate}
             onChange={(e) => setBirthDate(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+            className="input-field"
           />
         </div>
 
         <button
           onClick={calculateAge}
           disabled={!birthDate}
-          className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-sm"
+          className="btn-primary"
         >
           Calculate Age
         </button>
 
         {result && (
-          <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-100 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h3 className="text-gray-500 text-sm font-medium uppercase tracking-wider mb-4">
+          <div className="result-card mt-8">
+            <h3 className="text-[var(--color-text-muted)] text-sm font-medium uppercase tracking-wider mb-4">
               Your Precise Age
             </h3>
             <div className="grid grid-cols-3 gap-4">
               <div>
-                <span className="block text-3xl font-bold text-blue-900">{result.years}</span>
-                <span className="text-blue-600 text-xs font-semibold uppercase">Years</span>
+                <span className="block text-3xl font-extrabold text-[var(--color-accent-text)]">{result.years}</span>
+                <span className="text-[var(--color-accent)] text-xs font-semibold uppercase">Years</span>
               </div>
               <div>
-                <span className="block text-3xl font-bold text-blue-900">{result.months}</span>
-                <span className="text-blue-600 text-xs font-semibold uppercase">Months</span>
+                <span className="block text-3xl font-extrabold text-[var(--color-accent-text)]">{result.months}</span>
+                <span className="text-[var(--color-accent)] text-xs font-semibold uppercase">Months</span>
               </div>
               <div>
-                <span className="block text-3xl font-bold text-blue-900">{result.days}</span>
-                <span className="text-blue-600 text-xs font-semibold uppercase">Days</span>
+                <span className="block text-3xl font-extrabold text-[var(--color-accent-text)]">{result.days}</span>
+                <span className="text-[var(--color-accent)] text-xs font-semibold uppercase">Days</span>
               </div>
             </div>
           </div>

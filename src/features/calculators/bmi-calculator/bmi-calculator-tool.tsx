@@ -12,7 +12,7 @@ export default function BmiCalculatorTool() {
 
   let bmi: number | null = null;
   let category = "";
-  let categoryColor = "text-gray-900";
+  let categoryColor = "text-[var(--color-text-primary)]";
 
   if (w > 0 && h > 0) {
     const heightInMeters = h / 100;
@@ -29,7 +29,7 @@ export default function BmiCalculatorTool() {
       categoryColor = "text-yellow-600";
     } else {
       category = "Obese";
-      categoryColor = "text-red-600";
+      categoryColor = "text-red-500";
     }
   }
 
@@ -37,7 +37,7 @@ export default function BmiCalculatorTool() {
     <div className="max-w-md mx-auto">
       <div className="space-y-6">
         <div>
-          <label htmlFor="weight" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="weight" className="block text-sm font-semibold text-[var(--color-text-secondary)] mb-2">
             Weight (kg)
           </label>
           <input
@@ -46,12 +46,12 @@ export default function BmiCalculatorTool() {
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
             placeholder="e.g. 70"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all outline-none"
+            className="input-field"
           />
         </div>
 
         <div>
-          <label htmlFor="height" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="height" className="block text-sm font-semibold text-[var(--color-text-secondary)] mb-2">
             Height (cm)
           </label>
           <input
@@ -60,22 +60,22 @@ export default function BmiCalculatorTool() {
             value={height}
             onChange={(e) => setHeight(e.target.value)}
             placeholder="e.g. 175"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all outline-none"
+            className="input-field"
           />
         </div>
 
         {bmi !== null && (
-          <div className="mt-8 p-6 bg-gray-50 rounded-xl border border-gray-100 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h3 className="text-gray-500 text-sm font-medium uppercase tracking-wider mb-2">
+          <div className="result-card mt-8">
+            <h3 className="text-[var(--color-text-muted)] text-sm font-medium uppercase tracking-wider mb-2">
               Your BMI Result
             </h3>
-            <div className="text-4xl font-bold text-gray-900 mb-2">
+            <div className="text-4xl font-extrabold text-[var(--color-text-primary)] mb-2">
               {bmi.toFixed(1)}
             </div>
-            <div className={cn("text-xl font-bold uppercase tracking-tight", categoryColor)}>
+            <div className={cn("text-xl font-extrabold uppercase tracking-tight", categoryColor)}>
               {category}
             </div>
-            <p className="mt-4 text-sm text-gray-500">
+            <p className="mt-4 text-sm text-[var(--color-text-muted)]">
               A healthy BMI for adults typically ranges from 18.5 to 24.9.
             </p>
           </div>
